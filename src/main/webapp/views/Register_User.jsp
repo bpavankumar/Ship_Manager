@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="justify-content-center card">
-                    <h1> Enter the information </h1>
+                    <h1>Enter the information</h1>
                     <div class="card-body">
                         <form action="/user/save_user"  method="post" >
                             <div class="form-group">
@@ -22,7 +21,7 @@
                                 <input type="text" name="user_id" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label for="sname">Name </label>
+                                <label for="sname">Name:</label>
                                 <input type="text" name="sname" class="form-control" />
                             </div>
                             <div class="form-group">
