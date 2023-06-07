@@ -43,11 +43,10 @@ public class Manager_Controller {
 			return "error";
 		}
 	}
-	
+
 	@GetMapping("/manager/save_schedule")
-	public ModelAndView addSchedule(ModelAndView mv)
-	{
-		mv=new ModelAndView("add_schedule");
+	public ModelAndView addSchedule(ModelAndView mv) {
+		mv = new ModelAndView("add_schedule");
 		return mv;
 	}
 
@@ -77,7 +76,7 @@ public class Manager_Controller {
 		model.addAttribute("route_details", route_details);
 		return "all_routes";
 	}
-	
+
 	// URL: http://localhost:5082/manager/ship_details/update/101
 	@GetMapping("/manager/ship_details/update/{ship_id}")
 	public String updateShipDetails(@PathVariable("ship_id") String id, Model model) {
@@ -131,13 +130,8 @@ public class Manager_Controller {
 	@PostMapping("/manager/ship_route/save_route")
 	public String save_route(@RequestParam("shipping_date") String shipping_date,
 			@ModelAttribute("ship_route") Ship_Routes ship_route) throws ParseException {
-
-		System.out.println(ship_route.getShip_id());
-		System.out.println(shipping_date);
-
 		Date date = new SimpleDateFormat("dd-MM-yyyy").parse(shipping_date);
 		ship_route.setDate(date);
-
 		boolean status = service.addShipRoute(ship_route);
 		if (status) {
 			return "success";
@@ -145,7 +139,7 @@ public class Manager_Controller {
 			return "error";
 		}
 	}
-	
+
 	@GetMapping("/manager/ship_route/update/{route_id}")
 	public String updateShipRoute(@PathVariable("route_id") int route_id, Model model) {
 		Ship_Routes route = service.getRoute(route_id);
