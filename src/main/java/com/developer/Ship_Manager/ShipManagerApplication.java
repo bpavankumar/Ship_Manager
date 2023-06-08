@@ -1,4 +1,3 @@
-
 package com.developer.Ship_Manager;
 
 import org.springframework.boot.SpringApplication;
